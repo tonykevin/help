@@ -1,0 +1,49 @@
+GIT
+
+INSTALACIÓN 
+1.  pacman -S git		# Instalador
+2.  pacman -S openssh	# Dependencia para generar clave ssh
+
+CONFIGURACIÓN GLOBAL
+3.  git config --global user.name "tony"			# Indica tu nombre
+4.  git config --global user.email "ikibits@gmail.com"	# Indica tu correo electronico
+5.  git config --global color.status auto		# Colorea los cambios del repositorio
+6.  git config --global color.branch auto		# Colorea los cambios de las ramas de un repositorio
+
+GENERANDO LA CLAVE SSH DE SEGURIDAD
+7.  ssh-keygen		# Ejecutar el comando,pulsa enter para confirmar la creación
+					# Establece una contraseña y confirma
+
+AGREGANDO SERVICIOS EN LA NUBE
+8.  Previamente tienes que tener una cuenta en github, bitbucket, SVN u otro con soporte para git
+9.  Agrega las cuentas de servicios que deseas relacionar
+	Ejemplo:
+
+		git config --global github.user "ikibits"		# Agregando la cuenta de mi github
+		git config --global bitbucket.user "ikibits"	# Agregando la cuenta de mi bitbucket
+10. Agregando la clave ssh a tu servicio en la nube para sincronizar tu equipo
+	->Inicialmente se creo un claves con ssh-keygen, este genera 2 archivos
+		*rsa: clave de seguridada privada
+		*rsa.pub: clave de seguridad publica				# Se usa para los servicios externos en la nube
+		*Estos archivos se encuentran ocultos en tu carpeta personal, para visualizar control+h y busca la carpeta .ssh
+	->Sigue los links segun la secuencia que se muestra en cada caso
+	
+	Github		: icono herramientas, ssh keys, Add ssh key, title "Estable el nombre de tu  pc", "pega todo el contenido de rsa.pub", addkey
+
+	Bitbucket	: manage account, ssh keys,add key, label "Estable el nombre de tu  pc", key "pega todo el contenido de rsa.pub", addkey
+
+VERFICAR Y TESTEAR LA CONFIGURACION EN GIT CON SERVICIOS EN LA NUBE
+11. Realizar la conexión para para los servicios de la nube seleccionadas 
+	Ejemplo:
+	Github		: ssh -vT git@github.com			
+	Bitbucket	: ssh -vT git@bitbucket.org
+	
+	*En el proceso te solicita confirmar la relación de tu equipo y el servicio, edite yes.
+12. Verifica tu conexión y estado
+	Github		: ssh -T git@github.com
+
+		* Esta bien si tu resultado es similar: Hi ikibits! You've successfully authenticated, but GitHub does not provide shell access.
+		
+	Bitbucket	: ssh -T git@bitbucket.org
+		* Esta bien si tu resultado es similar: You can use git or hg to connect to Bitbucket. Shell access is disabled.
+13 Adicional puede instalar un entorno gráfico para git gitg
