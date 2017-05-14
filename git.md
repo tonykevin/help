@@ -107,15 +107,15 @@ Verficar y testear la configuracion de git con los servicios en la nube
 
   * __Github__
 
-      > ssh -T git@github.com
+      > ssh -T `git@github.com`
 
   * __Bitbucket__
 
-      > ssh -T git@bitbucket.org
+      > ssh -T `git@bitbucket.org`
 
       * ___Opcional___: si deseas ver cada detalle que se realiza en la conexión puedes agregar "v".
 
-          > ssh -vT git@github.com
+          > ssh -vT `git@github.com`
 
 2. Una vez comprobado la conexión; se consulta si desea agregar la dirección IP del servicio, confirme y listo.
 
