@@ -133,4 +133,4 @@ Extras
 
   > pacman -S gitg
 
-2. Si deseas imprimir, busca en el proyecto la carpeta [textConfig](./recursos/git)
+2. Si deseas imprimir, busca en el proyecto la carpeta [recursos](./recursos/git)
