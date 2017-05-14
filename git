@@ -1,27 +1,39 @@
 GIT
 
+
 INSTALACIÓN
 
 1. pacman -S git         # Instalador
 2. pacman -S openssh     # Dependencia para generar llave ssh
 
+
 CONFIGURACIÓN GLOBAL
 
-3. git config --global user.name "nombre"    # Indica tu nombre.
-4. git config --global user.email "correo"   # Indica tu correo electronico.
-5. git config --global color.status auto     # Colorea los cambios del repositorio.
-6. git config --global color.branch auto     # Colorea los cambios de las ramas de un repositorio.
+1. git config --global user.name "nombre"                     # Indica tu nombre.
+2. git config --global user.email "correo"                    # Indica tu correo electronico.
+3. git config --global core.excludesfile ~/.gitignore-global  # Define gitignore global
+4. git config --global merge.tool meld                        # Define la herramienta para el "merging"
 
-GENERANDO LA CLAVE SSH DE SEGURIDAD
 
-7. ssh-keygen   # Ejecutar el comando, luego pulsa "enter" para confirmar donde se guarda la llave.
-                # Para finalizar establece una contraseña y confirma.
+DEFINE EL GITIGNORE GLOBAL
+
+1. touch .gitignore-global                  # crea el archivo
+2. echo "*.log" > .gitignore-global         # edite el archivo
+
+  * Nota: la página web "gitginore.io" puede ayudarte para selecionar los patrones según tus aplicaciones.
+
+
+GENERANDO LA CLAVE SSH
+
+1. ssh-keygen   # Ejecutar el comando, luego pulsa "enter" para confirmar donde se guarda la llave.
+
+  * Nota: Para finalizar establece una contraseña y confirma.
 
 CONECTAR VÍA SSH CON REPOSITORIOS REMOTOS
 
-8. Previamente tienes que tener una cuenta en github, bitbucket u otro con soporte para git
+1. Previamente tienes que tener una cuenta en github, bitbucket u otro con soporte para git
 
-9. Agregar llave ssh a tu servicio en la nube para sincronizar tu equipo:
+2. Agregar llave ssh a tu servicio en la nube para sincronizar tu equipo:
 
   * Inicialmente se creo 2 llaves con ssh-keygen:
       rsa       # llave de seguridad privada
@@ -52,24 +64,32 @@ CONECTAR VÍA SSH CON REPOSITORIOS REMOTOS
           key: Agrega el contenido de la llave rsa.pub
       -> Add key
 
-VERFICAR Y TESTEAR LA CONFIGURACION EN GIT CON SERVICIOS EN LA NUBE
+VERFICAR Y TESTEAR LA CONFIGURACIÓN DE GIT CON LOS SERVICIOS EN LA NUBE
 
-10. Comprobar la conexión con los servicios externos:
+1. Comprobar la conexión con los servicios externos:
 
-  * Github    : ssh -T git@github.com
-  * Bitbucket : ssh -T git@bitbucket.org
+  * Github:
 
-    -> Adicional: si deseas ver cada detalle que se realiza en la conexión puedes agregar "v".
+    ssh -T git@github.com
+
+  * Bitbucket :
+
+    ssh -T git@bitbucket.org
+
+    -> Opcional: si deseas ver cada detalle que se realiza en la conexión puedes agregar "v".
         ssh -vT git@github.com
 
-  * Una vez comprobado la conexión; se consulta si desea agregar la dirección IP del servicio, confirme y listo.
-    -> Nota: Las direcciones conocidas que usted da de alta se almacenan en el archivo ~/.ssh/known_hosts
+2. Una vez comprobado la conexión; se consulta si desea agregar la dirección IP del servicio, confirme y listo.
 
-  * Finalmente el resultado puede ser(depende del idioma de tu ordenador):
-    -> Github   : Hi "tu cuenta"! You've successfully authenticated, but github does not provide shell access.
-    -> Bitbucket: logged in as "tu cuenta" You can use git or hg to connect to Bitbucket. Shell access is disabled.
+  -> Nota: Las direcciones conocidas que usted da de alta se almacenan en el archivo ~/.ssh/known_hosts
+
+3. Finalmente el resultado puede ser(depende del idioma de tu ordenador):
+
+  -> Github   : Hi "tu cuenta"! You've successfully authenticated, but github does not provide shell access.
+  -> Bitbucket: logged in as "tu cuenta" You can use git or hg to connect to Bitbucket. Shell access is disabled.
 
 EXTRAS
 
-11. Puedes instalar un entorno gráfico para git:
+Puedes instalar un entorno gráfico para git:
+
   pacman -S gitg
