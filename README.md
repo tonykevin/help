@@ -1,5 +1,5 @@
-Configuración de aplicaciones en Archlinux
-==========================================
+:umbrella: Notes to configure applications in GNU Linux
+=======================================================
 
 Development
 -----------
