@@ -18,6 +18,8 @@ Requerimientos
 Configuración global
 --------------------
 
+### Requerido
+
 1. Define tu nombre
 
     > git config --global user.name "nombre"
@@ -33,6 +35,13 @@ Configuración global
 4. Define la herramienta para el "merging"
 
     > git config --global merge.tool meld
+
+### Opcional
+
+* Deshabilitar copias de respaldo(__.orig__)
+
+    > git config --global mergetool.keepBackup false
+
 
 Define el gitignore global
 --------------------------

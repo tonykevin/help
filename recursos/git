@@ -1,6 +1,5 @@
 GIT
 
-
 INSTALACIÓN
 
 1. pacman -S git         # Instalador
@@ -9,10 +8,16 @@ INSTALACIÓN
 
 CONFIGURACIÓN GLOBAL
 
+Requerido:
+
 1. git config --global user.name "nombre"                     # Indica tu nombre.
 2. git config --global user.email "correo"                    # Indica tu correo electronico.
 3. git config --global core.excludesfile ~/.gitignore-global  # Define gitignore global
 4. git config --global merge.tool meld                        # Define la herramienta para el "merging"
+
+Opcional:
+
+*  git config --global mergetool.keepBackup false             # Deshabilitar copias de respaldo
 
 
 DEFINE EL GITIGNORE GLOBAL
