@@ -26,3 +26,6 @@ Remove an environment variable
 heroku config:unset <key>
 ```
 
+## Extra
+
+Check the official documentation in https://devcenter.heroku.com/
