@@ -30,7 +30,7 @@ DEFINE EL GITIGNORE GLOBAL
 
 GENERANDO LA CLAVE SSH
 
-1. ssh-keygen   # Ejecutar el comando, luego pulsa "enter" para confirmar donde se guarda la llave.
+1. ssh-keygen -t rsa -b 4096 -C "tu correo electrónico" # Crea tu clase, indicando tipo, tamaño y comentario.
 
   * Nota: Para finalizar establece una contraseña y confirma.
 

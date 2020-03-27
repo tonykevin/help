@@ -1,70 +1,116 @@
-GIT
+Git
 ===
 
 Requerimientos
 --------------
-1. Instalar git
+Instalar git
 
-    > pacman -S git
+```bash
+pacman -S git
+```
 
-2. Instalar openssh para generar la clave ssh
 
-    > pacman -S openssh
 
-3. Instalar meld para resolver "merge"
+Instalar openssh para generar la clave ssh
 
-    > pacman -S meld
+```bash
+pacman -S openssh
+```
+
+
+
+Instalar meld para resolver "merge"
+
+```bash
+pacman -S meld
+```
 
 Configuración global
 --------------------
 
 ### Requerido
 
-1. Define tu nombre
+Define tu nombre
 
-    > git config --global user.name "nombre"
+```bash
+git config --global user.name "nombre"
+```
 
-2. Define tu correo electrónico.
 
-    > git config --global user.email "correo"
 
-3. Define gitignore global
+Define tu correo electrónico.
 
-    > git config --global core.excludesfile ~/.gitignore-global
+```bash
+git config --global user.email "correo"
+```
 
-4. Define la herramienta para el "merging"
 
-    > git config --global merge.tool meld
+
+Define gitignore global
+
+```bash
+git config --global core.excludesfile ~/.gitignore-global
+```
+
+
+
+Define la herramienta para el "merging"
+
+```bash
+git config --global merge.tool meld
+```
+
+
 
 ### Opcional
 
-* Deshabilitar copias de respaldo(__.orig__)
+Deshabilitar copias de respaldo(__.orig__)
 
-    > git config --global mergetool.keepBackup false
+```bash
+git config --global mergetool.keepBackup false
+```
+
+
 
 
 Define el gitignore global
 --------------------------
 
-1. Crea el archivo
+Crea el archivo
 
-    > touch .gitignore-global
+```bash
+touch .gitignore-global
+```
 
-2. Edite el archivo
+Edite el archivo
 
-    > echo "*.log" > .gitignore-global
+```bash
+echo "*.log" > .gitignore-global
+```
 
-    * ___Nota___: [Gitignore.io](http://www.gitignore.io) puede ayudarte para selecionar los patrones según tus aplicaciones.
+
+
+* ___Nota___: [Gitignore.io](http://www.gitignore.io) puede ayudarte para selecionar los patrones según tus aplicaciones.
 
 
 Generando clave ssh
 -------------------
 
-Ejecutar el comando, luego pulsa "enter" para confirmar donde se guarda la llave.
+Ejecutar el comando:
 
-   > ssh-keygen
+```bash
+ssh-keygen -t rsa -b 4096 -C "tu correo electrónico"
+```
 
-* ___Nota___: Para finalizar establece una contraseña y confirma.
+   > -t: tipo
+   >
+   > -b: número de bits
+   >
+   > -C: agrega un comentario
+
+___Nota___: 
+
+* Para finalizar establece una contraseña y confirma.
 
 Conectar vía ssh con repositorios remotos
 -----------------------------------------
@@ -116,14 +162,18 @@ Verficar y testear la configuracion de git con los servicios en la nube
 
   * __Github__
 
-      > ssh -T `git@github.com`
+      ```bash
+      ssh -T git@github.com
+      ```
 
   * __Bitbucket__
 
-      > ssh -T `git@bitbucket.org`
+      ```bash
+ssh -T git@bitbucket.org
+      ```
 
       * ___Opcional___: si deseas ver cada detalle que se realiza en la conexión puedes agregar "v".
-
+      
           > ssh -vT `git@github.com`
 
 2. Una vez comprobado la conexión; se consulta si desea agregar la dirección IP del servicio, confirme y listo.
@@ -140,6 +190,10 @@ Extras
 
 1. Puedes instalar un entorno gráfico para git:
 
-  > pacman -S gitg
+   ```bash
+   pacman -S gitg
+   ```
+
+   
 
 2. Si deseas imprimir, busca en el proyecto la carpeta [recursos](./recursos/git)
